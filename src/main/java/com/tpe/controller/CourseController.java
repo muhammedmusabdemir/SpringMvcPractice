@@ -1,2 +1,4 @@
-package com.tpe.controller;public class CourseController {
+package com.tpe.controller;
+
+public class CourseController {
 }
