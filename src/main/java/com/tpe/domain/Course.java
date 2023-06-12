@@ -22,11 +22,27 @@ public class Course {
     @NotNull(message = "Please provide code")
     private Integer code;
 
-    public Long getId() {
-        return id;
+    public String getCoursename() {
+        return coursename;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setCoursename(String coursename) {
+        this.coursename = coursename;
+    }
+
+    public String getPrefix() {
+        return prefix;
+    }
+
+    public void setPrefix(String prefix) {
+        this.prefix = prefix;
+    }
+
+    public Integer getCode() {
+        return code;
+    }
+
+    public void setCode(Integer code) {
+        this.code = code;
     }
 }
