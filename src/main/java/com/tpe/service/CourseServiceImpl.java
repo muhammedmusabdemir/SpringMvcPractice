@@ -1,27 +1,42 @@
 package com.tpe.service;
 
 import com.tpe.domain.Course;
+import com.tpe.exception.ResourceNotFoundException;
+import com.tpe.repository.CourseRepository;
+import com.tpe.repository.CourseRepositoryImpl;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class CourseServiceImpl implements CourseService{
-    @Override
-    public void save(Course course) {
 
+    @Autowired
+    private CourseRepository courseRepository;
+
+
+    @Override
+    public void saveCourse(Course course) {
+        courseRepository.save(course);
     }
 
     @Override
     public List<Course> getAllCourse() {
-        return null;
+        return courseRepository.getAll();
     }
 
     @Override
     public Course findCourseById(Long id) {
-        return null;
+        Course course = courseRepository.findById(id).
+                orElseThrow(()-> new ResourceNotFoundException("Resource Not Found By Id " + id));
+        return course;
     }
 
     @Override
     public void deleteCourse(Long id) {
+
+        courseRepository.delete(id);
 
     }
 }

@@ -7,7 +7,7 @@ import java.util.Optional;
 
 public interface CourseRepository {
 
-    void save(Course course);
+    void save (Course course);
 
     List<Course> getAll();
 

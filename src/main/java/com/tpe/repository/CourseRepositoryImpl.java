@@ -31,7 +31,7 @@ public class CourseRepositoryImpl implements CourseRepository {
     public List<Course> getAll() {
         Session session = sessionFactory.openSession();
         Transaction tx = session.beginTransaction();
-        List<Course> courseList = session.createQuery("FROM COURSE", Course.class).getResultList();
+        List<Course> courseList = session.createQuery("FROM Course", Course.class).getResultList();
 
 
         tx.commit();

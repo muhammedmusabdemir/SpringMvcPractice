@@ -22,6 +22,14 @@ public class Course {
     @NotNull(message = "Please provide code")
     private Integer code;
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public String getCoursename() {
         return coursename;
     }

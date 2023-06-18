@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface CourseService {
 
-    void save(Course course);
+    void saveCourse (Course course);
 
     List<Course> getAllCourse();
 

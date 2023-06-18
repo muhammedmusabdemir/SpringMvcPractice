@@ -4,21 +4,21 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 
 public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 
-    @Override
+    @Override //db ve hibernate ile ilgili configurationlar
     protected Class<?>[] getRootConfigClasses() {
         return new Class[] {
                 RootContextConfig.class
         };
     }
 
-    @Override
+    @Override //Spring MVC config ayarlari - bean tanimlamalarinin yer aldigi class
     protected Class<?>[] getServletConfigClasses() {
         return new Class[] {
                 WebMvcConfig.class
         };
     }
 
-    @Override
+    @Override //hangi url hangi servlet ile iliskilendirilecek
     protected String[] getServletMappings() {
         return new String[] {"/"};
     }
